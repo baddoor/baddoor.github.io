@@ -1,4 +1,4 @@
-# --- Vercel + GitHub 私有仓库自动部署脚本 ---
+﻿# --- Vercel + GitHub 私有仓库自动部署脚本 ---
 # 此脚本监控文件变化，自动推送源码到 GitHub 私有仓库
 # Vercel 会自动从 GitHub 拉取代码并构建部署
 
