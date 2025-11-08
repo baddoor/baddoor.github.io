@@ -353,52 +353,26 @@
 <li>其实最难的应该是模型的建立。<br>![[image-16.png]] ![[image-17.png]] ![[image-18.png]]</li>
 </ul>
 <h4 id="8-号"><a href="#8-号" class="headerlink" title="8 号"></a>8 号</h4><ul>
-<li><p>无法飞翔的翅膀。</p>
-</li>
-<li><p>[[道连·格雷的画像]]</p>
-</li>
-<li><p>忍不住做出修改，我想人生由麻木和现在这类时刻组成。</p>
-</li>
-<li><p>过几年自查幽门螺杆菌，同时应该列一个自查表，知道哪些是需要查的。预防癌症。</p>
-</li>
-<li><p>[[001-血字的研究]]</p>
-</li>
-<li><p>[[叔本华哲学的神奇魅力与影响]]</p>
-</li>
-<li><p><strong>D 的那些文章，完全是边开荒边写的（他自己也承认）。而看视频对他而言就只是在寻找灵感，什么灵感呢？&#x3D;&#x3D;构建的灵感&#x3D;&#x3D;。</strong> 要说光靠看视频和看书学会一个技能是不现实的，必须要动手才能明白。简单的道理。</p>
-</li>
-<li><p>那为什么学习数学、物理不能拥有同样的审美结构？研究迷宫本身的规则。</p>
-<ul>
+<li>无法飞翔的翅膀。</li>
+<li>[[道连·格雷的画像]]</li>
+<li>忍不住做出修改，我想人生由麻木和现在这类时刻组成。</li>
+<li>过几年自查幽门螺杆菌，同时应该列一个自查表，知道哪些是需要查的。预防癌症。</li>
+<li>[[001-血字的研究]]</li>
+<li>[[叔本华哲学的神奇魅力与影响]]</li>
+<li><strong>D 的那些文章，完全是边开荒边写的（他自己也承认）。而看视频对他而言就只是在寻找灵感，什么灵感呢？&#x3D;&#x3D;构建的灵感&#x3D;&#x3D;。</strong> 要说光靠看视频和看书学会一个技能是不现实的，必须要动手才能明白。简单的道理。</li>
+<li>那为什么学习数学、物理不能拥有同样的审美结构？研究迷宫本身的规则。<ul>
 <li>摆上感兴趣的公式，调节公式难度，让它仅稍微高于我的难度。</li>
 <li>其中的逻辑如何构建。</li>
 <li>这其中的工作甚至不需要我去做，prompt 可以实现。</li>
 </ul>
 </li>
-<li><p>![[image-19.png|218x125]]</p>
-<ul>
-<li>研究这个均值的代码，尝试用 IDE 复现一次。</li>
-<li><pre><code class="import">
-</code></pre>
-</li>
-</ul>
-<p> import matplotlib.pyplot as plt<br> from scipy.ndimage import gaussian_filter1d</p>
-<h1 id="—-1-生成模拟数据-—"><a href="#—-1-生成模拟数据-—" class="headerlink" title="— 1. 生成模拟数据 —"></a>— 1. 生成模拟数据 —</h1><h1 id="创建一个模拟所有数据线的基础形状（正弦波-噪声）"><a href="#创建一个模拟所有数据线的基础形状（正弦波-噪声）" class="headerlink" title="创建一个模拟所有数据线的基础形状（正弦波 + 噪声）"></a>创建一个模拟所有数据线的基础形状（正弦波 + 噪声）</h1><p> x &#x3D; np.linspace(-3, 5, 200)</p>
-<h1 id="模拟一个U型趋势作为基准线"><a href="#模拟一个U型趋势作为基准线" class="headerlink" title="模拟一个U型趋势作为基准线"></a>模拟一个U型趋势作为基准线</h1><p> base_line &#x3D; 0.5 * (x*<em>2) - 0.5</em>x + 0.2<br> base_line[x &lt; 0] &#x3D; np.cos(x[x&lt;0]*1.5) + 0.5 # 左侧添加一个余弦波峰</p>
-<h1 id="生成100条随机数据线"><a href="#生成100条随机数据线" class="headerlink" title="生成100条随机数据线"></a>生成100条随机数据线</h1><p> num_lines &#x3D; 100<br> all_lines &#x3D; []<br> for _ in range(num_lines):<br>     # 为每条线添加随机噪声<br>     noise &#x3D; np.random.randn(len(x)) * 0.2<br>     # 添加一些随机的上下波动<br>     drift &#x3D; np.random.randn(1) * 0.1<br>     # 通过高斯滤波使噪声更平滑，模拟真实数据的样子<br>     smooth_noise &#x3D; gaussian_filter1d(noise, sigma&#x3D;2)<br>     line_data &#x3D; base_line + smooth_noise + drift<br>     all_lines.append(line_data)</p>
-<h1 id="—-2-计算平均趋势线-—"><a href="#—-2-计算平均趋势线-—" class="headerlink" title="— 2. 计算平均趋势线 —"></a>— 2. 计算平均趋势线 —</h1><h1 id="计算所有数据线的平均值"><a href="#计算所有数据线的平均值" class="headerlink" title="计算所有数据线的平均值"></a>计算所有数据线的平均值</h1><p> mean_line &#x3D; np.mean(all_lines, axis&#x3D;0)</p>
-<h1 id="—-3-绘制图表-—"><a href="#—-3-绘制图表-—" class="headerlink" title="— 3. 绘制图表 —"></a>— 3. 绘制图表 —</h1><h1 id="创建一个画布"><a href="#创建一个画布" class="headerlink" title="创建一个画布"></a>创建一个画布</h1><p> plt.figure(figsize&#x3D;(10, 6))</p>
-<h1 id="绘制每一条半透明的数据线"><a href="#绘制每一条半透明的数据线" class="headerlink" title="绘制每一条半透明的数据线"></a>绘制每一条半透明的数据线</h1><p> for line in all_lines:<br>     plt.plot(x, line, color&#x3D;np.random.rand(3,), alpha&#x3D;0.1, linewidth&#x3D;1)</p>
-<h1 id="绘制加粗的平均线"><a href="#绘制加粗的平均线" class="headerlink" title="绘制加粗的平均线"></a>绘制加粗的平均线</h1><p> plt.plot(x, mean_line, color&#x3D;’black’, linewidth&#x3D;3, linestyle&#x3D;’-‘)</p>
-<h1 id="—-4-美化图表-—"><a href="#—-4-美化图表-—" class="headerlink" title="— 4. 美化图表 —"></a>— 4. 美化图表 —</h1><h1 id="设置坐标轴范围"><a href="#设置坐标轴范围" class="headerlink" title="设置坐标轴范围"></a>设置坐标轴范围</h1><p> plt.ylim(0, 1.9)<br> plt.xlim(-2.5, 5)</p>
-<h1 id="移除顶部的和右侧的边框线，让图表更简洁"><a href="#移除顶部的和右侧的边框线，让图表更简洁" class="headerlink" title="移除顶部的和右侧的边框线，让图表更简洁"></a>移除顶部的和右侧的边框线，让图表更简洁</h1><p> ax &#x3D; plt.gca()<br> ax.spines[‘top’].set_visible(False)<br> ax.spines[‘right’].set_visible(False)</p>
-<h1 id="添加坐标轴标签和标题（可选）"><a href="#添加坐标轴标签和标题（可选）" class="headerlink" title="添加坐标轴标签和标题（可选）"></a>添加坐标轴标签和标题（可选）</h1><h1 id="plt-xlabel-“X-axis”"><a href="#plt-xlabel-“X-axis”" class="headerlink" title="plt.xlabel(“X-axis”)"></a>plt.xlabel(“X-axis”)</h1><h1 id="plt-ylabel-“Y-axis”"><a href="#plt-ylabel-“Y-axis”" class="headerlink" title="plt.ylabel(“Y-axis”)"></a>plt.ylabel(“Y-axis”)</h1><h1 id="plt-title-“Beautiful-Plot-with-Matplotlib”"><a href="#plt-title-“Beautiful-Plot-with-Matplotlib”" class="headerlink" title="plt.title(“Beautiful Plot with Matplotlib”)"></a>plt.title(“Beautiful Plot with Matplotlib”)</h1><h1 id="显示图表"><a href="#显示图表" class="headerlink" title="显示图表"></a>显示图表</h1><p> plt.show()&#96;&#96;&#96;</p>
-</li>
+<li><h2 id="image-19-png-218x125-研究这个均值的代码，尝试用-IDE-复现一次"><a href="#image-19-png-218x125-研究这个均值的代码，尝试用-IDE-复现一次" class="headerlink" title="![[image-19.png|218x125]]  - 研究这个均值的代码，尝试用 IDE 复现一次"></a>![[image-19.png|218x125]]<br>  - 研究这个均值的代码，尝试用 IDE 复现一次</h2></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://baddoor.github.io/2025/10/24/%E6%97%A5%E5%BF%97/" data-id="cmhpo9a530000kglh8n46f8ek" data-title="日志" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://baddoor.github.io/2025/10/24/%E6%97%A5%E5%BF%97/" data-id="cmhpoa6c50000p8lh2q56a15z" data-title="日志" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
