@@ -457,8 +457,89 @@
 </ul>
 </li>
 </ul>
-<h4 id="13-号"><a href="#13-号" class="headerlink" title="13 号"></a>13 号</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">Ⅰ. 必学（一天内能掌握，比赛最有用）</span><br><span class="line"></span><br><span class="line">这部分是最低限度，让你具备“能跑模型”的能力。</span><br><span class="line"></span><br><span class="line">路径：</span><br><span class="line"></span><br><span class="line">User Guide → Getting Started</span><br><span class="line"></span><br><span class="line">看懂fit、predict、score三个函数的逻辑。</span><br><span class="line">它们是所有模型的统一接口，理解了这一层，其余模型几乎都能无缝替换。</span><br><span class="line"></span><br><span class="line">API Reference → Model selection → train_test_split</span><br><span class="line"></span><br><span class="line">学会如何把数据拆成训练集与测试集。</span><br><span class="line"></span><br><span class="line">User Guide → Linear Models → LinearRegression / LogisticRegression</span><br><span class="line"></span><br><span class="line">只看这两个例子，跑通一个简单预测任务、一个二分类任务。</span><br><span class="line"></span><br><span class="line">User Guide → Ensemble methods → RandomForestClassifier / RandomForestRegressor</span><br><span class="line"></span><br><span class="line">理解随机森林的调用方式，知道参数n_estimators、max_depth的作用即可。</span><br><span class="line"></span><br><span class="line">这四个点，你练熟后已经能解决 70% 比赛题的建模环节。</span><br><span class="line"></span><br><span class="line">Ⅱ. 进阶（只需浏览，比赛中遇到时再查）</span><br><span class="line"></span><br><span class="line">Preprocessing</span><br><span class="line"></span><br><span class="line">StandardScaler：特征标准化</span><br><span class="line"></span><br><span class="line">OneHotEncoder：分类变量转向量</span><br><span class="line"></span><br><span class="line">Metrics</span><br><span class="line"></span><br><span class="line">mean_squared_error、accuracy_score、r2_score</span><br><span class="line"></span><br><span class="line">Pipeline</span><br><span class="line"></span><br><span class="line">如果你要把预处理和建模连在一起，Pipeline 可以让代码更整洁，但非必需。</span><br><span class="line"></span><br><span class="line">Ⅲ. 可跳过（短期不学也不会影响比赛）</span><br><span class="line"></span><br><span class="line">聚类（k-means、DBSCAN）</span><br><span class="line"></span><br><span class="line">降维（PCA、LDA）</span><br><span class="line"></span><br><span class="line">神经网络（MLPClassifier）</span><br><span class="line"></span><br><span class="line">异常检测、特征选择、交叉验证细节</span><br><span class="line"></span><br><span class="line">这些属于“研究性扩展”，不适合速成阶段。</span><br><span class="line"></span><br><span class="line">Ⅳ. 实战策略</span><br><span class="line"></span><br><span class="line">你只需要准备一个能重复使用的模板，比如：</span><br><span class="line"></span><br><span class="line">from sklearn.model_selection import train_test_split</span><br><span class="line">from sklearn.linear_model import LinearRegression</span><br><span class="line">from sklearn.metrics import r2_score</span><br><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line"># 1. 数据读取</span><br><span class="line">df = pd.read_excel(&#x27;data.xlsx&#x27;)</span><br><span class="line">X = df[[&#x27;feature1&#x27;, &#x27;feature2&#x27;, &#x27;feature3&#x27;]]</span><br><span class="line">y = df[&#x27;target&#x27;]</span><br><span class="line"></span><br><span class="line"># 2. 拆分数据</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)</span><br><span class="line"></span><br><span class="line"># 3. 训练模型</span><br><span class="line">model = LinearRegression()</span><br><span class="line">model.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"># 4. 预测与评价</span><br><span class="line">y_pred = model.predict(X_test)</span><br><span class="line">print(&quot;R2:&quot;, r2_score(y_test, y_pred))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">换模型时，只改一行：</span><br><span class="line">LinearRegression() → RandomForestRegressor() 或 LogisticRegression()。</span><br></pre></td></tr></table></figure>
-
+<h4 id="13-号"><a href="#13-号" class="headerlink" title="13 号"></a>13 号</h4><ul>
+<li>Ⅰ. 必学（一天内能掌握，比赛最有用）</li>
+<li></li>
+<li>这部分是最低限度，让你具备“能跑模型”的能力。</li>
+<li></li>
+<li>路径：</li>
+<li></li>
+<li>User Guide → Getting Started</li>
+<li></li>
+<li>看懂fit、predict、score三个函数的逻辑。</li>
+<li>它们是所有模型的统一接口，理解了这一层，其余模型几乎都能无缝替换。</li>
+<li></li>
+<li>API Reference → Model selection → train_test_split</li>
+<li></li>
+<li>学会如何把数据拆成训练集与测试集。</li>
+<li></li>
+<li>User Guide → Linear Models → LinearRegression &#x2F; LogisticRegression</li>
+<li></li>
+<li>只看这两个例子，跑通一个简单预测任务、一个二分类任务。</li>
+<li></li>
+<li>User Guide → Ensemble methods → RandomForestClassifier &#x2F; RandomForestRegressor</li>
+<li></li>
+<li>理解随机森林的调用方式，知道参数n_estimators、max_depth的作用即可。</li>
+<li></li>
+<li>这四个点，你练熟后已经能解决 70% 比赛题的建模环节。</li>
+<li></li>
+<li>Ⅱ. 进阶（只需浏览，比赛中遇到时再查）</li>
+<li></li>
+<li>Preprocessing</li>
+<li></li>
+<li>StandardScaler：特征标准化</li>
+<li></li>
+<li>OneHotEncoder：分类变量转向量</li>
+<li></li>
+<li>Metrics</li>
+<li></li>
+<li>mean_squared_error、accuracy_score、r2_score</li>
+<li></li>
+<li>Pipeline</li>
+<li></li>
+<li>如果你要把预处理和建模连在一起，Pipeline 可以让代码更整洁，但非必需。</li>
+<li></li>
+<li>Ⅲ. 可跳过（短期不学也不会影响比赛）</li>
+<li></li>
+<li>聚类（k-means、DBSCAN）</li>
+<li></li>
+<li>降维（PCA、LDA）</li>
+<li></li>
+<li>神经网络（MLPClassifier）</li>
+<li></li>
+<li>异常检测、特征选择、交叉验证细节</li>
+<li></li>
+<li>这些属于“研究性扩展”，不适合速成阶段。</li>
+<li></li>
+<li>Ⅳ. 实战策略</li>
+<li></li>
+<li>你只需要准备一个能重复使用的模板，比如：</li>
+<li></li>
+<li>from sklearn.model_selection import train_test_split</li>
+<li>from sklearn.linear_model import LinearRegression</li>
+<li>from sklearn.metrics import r2_score</li>
+<li>import pandas as pd</li>
+<li></li>
+<li><h1 id="1-数据读取"><a href="#1-数据读取" class="headerlink" title="1. 数据读取"></a>1. 数据读取</h1></li>
+<li>df &#x3D; pd.read_excel(‘data.xlsx’)</li>
+<li>X &#x3D; df[[‘feature1’, ‘feature2’, ‘feature3’]]</li>
+<li>y &#x3D; df[‘target’]</li>
+<li></li>
+<li><h1 id="2-拆分数据"><a href="#2-拆分数据" class="headerlink" title="2. 拆分数据"></a>2. 拆分数据</h1></li>
+<li>X_train, X_test, y_train, y_test &#x3D; train_test_split(X, y, test_size&#x3D;0.2)</li>
+<li></li>
+<li><h1 id="3-训练模型"><a href="#3-训练模型" class="headerlink" title="3. 训练模型"></a>3. 训练模型</h1></li>
+<li>model &#x3D; LinearRegression()</li>
+<li>model.fit(X_train, y_train)</li>
+<li></li>
+<li><h1 id="4-预测与评价"><a href="#4-预测与评价" class="headerlink" title="4. 预测与评价"></a>4. 预测与评价</h1></li>
+<li>y_pred &#x3D; model.predict(X_test)</li>
+<li>print(“R2:”, r2_score(y_test, y_pred))</li>
+<li></li>
+<li></li>
+<li>换模型时，只改一行：</li>
+<li>LinearRegression() → RandomForestRegressor() 或 LogisticRegression()。</li>
+</ul>
 <h4 id="14-号（（））"><a href="#14-号（（））" class="headerlink" title="14 号（（））"></a><strong>14 号</strong>（（））</h4><ul>
 <li>早上发题</li>
 </ul>
@@ -466,7 +547,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://baddoor.github.io/2025/10/24/%E6%97%A5%E5%BF%97/" data-id="cmhvtxcjc0000pslh205fch15" data-title="日志" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://baddoor.github.io/2025/10/24/%E6%97%A5%E5%BF%97/" data-id="cmhvu9wbj0000aclh0wvxaywi" data-title="日志" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
